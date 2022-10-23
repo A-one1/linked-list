@@ -8,8 +8,8 @@ public class LinkedList {
         Node newNode = new Node(name);
         return newNode;
     }
-    
-        public void init() {
+
+    public void init() {
         first = null;
     }
 
@@ -87,7 +87,7 @@ public class LinkedList {
             deleted = true;
         }
         while (thisSection != nextSection && thisSection.name.charAt(0) == startChar && !deleted) {
-            
+
             if (thisSection.next.name.equals(name)) {
                 Node deleteNode = thisSection.next;
                 thisSection.next = deleteNode.next;
@@ -103,36 +103,34 @@ public class LinkedList {
         }
     }
 
-    public void lengthSection(char alphabet){
+    public void lengthSection(char alphabet) {
         int c = 0;
-        Node thisSection = array[alphabet-'a'];
-        if(thisSection == null){
+        Node thisSection = array[alphabet - 'a'];
+        if (thisSection == null) {
             System.out.println("NO NAME WITH GIVEN ALPHABET");
-        }
-        else { 
-          
-                while(thisSection !=   null && thisSection.name.charAt(0)==alphabet){
-                    c++;
-                    thisSection = thisSection.next;
-                }
-                System.out.println("Length of section " + alphabet + " is " + c);
+        } else {
 
+            while (thisSection != null && thisSection.name.charAt(0) == alphabet) {
+                c++;
+                thisSection = thisSection.next;
             }
+            System.out.println("Length of section " + alphabet + " is " + c);
 
         }
+
+    }
 
     public void showSection(char alphabet) {
         Node thisSection = array[alphabet - 'a'];
         if (thisSection == null) {
             System.out.println("NO NAMES FOUND");
         } else {
-                while (thisSection != null&& thisSection.name.charAt(0) == alphabet) {
-                    System.out.println(thisSection.name);
-                    thisSection = thisSection.next;
-                }
+            while (thisSection != null && thisSection.name.charAt(0) == alphabet) {
+                System.out.println(thisSection.name);
+                thisSection = thisSection.next;
             }
-
         }
 
     }
 
+}
